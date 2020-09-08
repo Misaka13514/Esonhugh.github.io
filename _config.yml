@@ -8,53 +8,53 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Chirpy                          # the main title
+title: Esonhugh's Blog                         # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: __清闲悠哉快活日，俯首不问世间事。  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  A Geeker,shitcode programmer,cyber_sec researcher,learner
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'protocol://domain'
+url: 'https://esonhugh.github.io'
 
-author: your_full_name                  # change to your full name
+author: Esonhugh_Skyworship                 # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /assets/img/sample/reol.jpg    # support internet resources
 
 github:
-  username: github_username             # change to your github username
+  username: Esonhugh             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: @skyworship2            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Esonhugh_skyworship                  # it will shows as the copyright owner in Footer
+  email: Esonhughoutside@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/skyworship2      # change to your twitter homepage
+    - https://github.com/esonhugh      # change to your github homepage
+    - https://t.me/EsonHugh_Skywalker
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+google_site_verification: google-site-verification=ydPdOydBG9Rr0BOI5iDfZQ6xRBbv5h_taJW86P93wtc 
+# change to your verification string
 
 #--------------------------
 
 
 # Only if your site type is GitHub Project sites and doesn't have a custom domain,
 # change below value to '/projectname'.
-baseurl: ''
+baseurl: 'esonhugh.github.io'
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
 
 google_analytics:
-  id: ''          # Fill with your Google Analytics ID
+  id: 'UA-177398607-1'          # Fill with your Google Analytics ID
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
