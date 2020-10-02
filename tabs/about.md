@@ -44,11 +44,11 @@ title: About
 >almost very kind of meat
 
 # OS_connect_method(links)
->GitHub:[@Esonhugh](github.com/Esonhugh)
+>GitHub:[@Esonhugh](https://github.com/Esonhugh)
 
->Twitter:[@skyworship2](twitter.com/Skyworship2?s=09)
+>Twitter:[@skyworship2](https://twitter.com/Skyworship2?s=09)
 
->Telegram:[@Esonhugh_Shit $Code Producer](t.me/EsonHugh_Skywalker)
+>Telegram:[@Esonhugh_Shit $Code Producer](https://t.me/EsonHugh_Skywalker)
 
 Mail|address
 ----|-----
@@ -57,27 +57,7 @@ Gmail|esonhughoutside@gmail.com
 
 
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</br>
+<br>
 
 ### Other_info
 >theme: https://github.com/cotes2020/jekyll-theme-chirpy
