@@ -4,9 +4,9 @@ date: 2020-09-20 +0800
 categories: [pentest-learning,Vulnhub]
 tags: ctf     # TAG names should always be lowercase
 ---
-#DC1-wirteups
+# DC1-wirteups
 
-##scan
+## scan
 
 first we need locate the machine.
 
@@ -384,7 +384,7 @@ so what`s the most important or vulnerable in hacking an cms??
 
 so with guides, we can see the version is 7.22-7.26
 
-##getshell
+## getshell
 
 if we see this versio in metasploit or searchsploit.
 
@@ -455,7 +455,7 @@ but i fail..if anyone can i hope he/she can tell me just send me email...
 
 ```
 
-##level up your permission
+## level up your permission
 
 clear your mind
 
@@ -661,6 +661,9 @@ Special PERMS will help FIND the passwd - but you'll need to -exec that command 
 Unh..go to the method one get shell~~;
 
 ---
+
+## WIN
+
 now you are root!
 WIN!!!!!
 ```
@@ -676,5 +679,7 @@ You can let me know what you thought of this little journey
 by contacting me via Twitter - @DCAU7
 ```
 -------------success-------------
+
+---
 
 thank you for watching~I am Esonhugh,this is the frist blog for me.
