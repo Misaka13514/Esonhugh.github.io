@@ -2,7 +2,7 @@
 title: DC1 walk-through/learnning notes..
 date: 2020-09-20 +0800
 categories: [pentest-learning,Vulnhub]
-tags: [CTF][vulnhub]     # TAG names should always be lowercase
+tags: ctf     # TAG names should always be lowercase
 ---
 #DC1-wirteups
 
