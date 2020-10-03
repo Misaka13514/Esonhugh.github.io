@@ -53,16 +53,32 @@ title: About
 >Telegram_channel:[@Esonhugh_LifeNagging](https://t.me/Esonhugh_LifeNagging)
 
 
+>Mail|address
+>----|-----
+>QQmail|esonhugh@vip.qq.com
+>Gmail|esonhughoutside@gmail.com
 
-Mail|address
-----|-----
-QQmail|esonhugh@vip.qq.com
-Gmail|esonhughoutside@gmail.com
+---
+#OS_networks(friend_links)
+---
+User_name|website
+---------|-------
+weepingdogel|https://weepingdogel.github.io/
+ajin|https://ajin.cloud/
+欠陥電気|https://moeneko.xyz/
+andychen|https://andychen.tk/
 
 
-<br>
-<br>
+```
 
+
+
+
+
+
+
+```
+---
 ### Other_info
 >theme: https://github.com/cotes2020/jekyll-theme-chirpy
 
