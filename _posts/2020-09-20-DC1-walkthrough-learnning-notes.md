@@ -370,12 +370,14 @@ so what`s the most important or vulnerable in hacking an cms??
 >> ``` 
 >> searchsploit xxx		#xxx can replace with the software,versions
 >> ```
+
 >2)themes and plugins
 >>there are many careless developer use unsafe codes.
 >>
 >>and the theme and plugins will get high level privilege when the web server runs.
 >>
 >>so if you can edit with them or upload them you can use evil php code/js code/.. to privilege you (get root) and get shell.
+
 >3)vulnerable setting file or profiles
 >>if any high privilege setting file is avaiable to anonymous users/low privilege users 
 >>
@@ -474,22 +476,22 @@ the answer is clear.
 >whoami:www-data
 >
 >use command "whoami"/"id" to get detail infomation
->
+
 >what can i do?
 >
 >to sure that we can use command
 >>as
->```
->compgen -a		#(alias)
->	-u		#(user)
->	-c		#(command)
->```
+>>```
+>>compgen -a		#(alias)
+>>	-u		#(user)
+>>	-c		#(command)
+>>```
 >but in some place as our own kali,this command is banned.
 >
 >also if find/locate command can use we can got the more deeper searching ability
 >
 >as we can search the flags or other useful things when pentest.
->
+
 >where i will go?
 >
 >it is also clear
