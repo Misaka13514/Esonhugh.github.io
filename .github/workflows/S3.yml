@@ -20,7 +20,7 @@ jobs:
     - uses: jakejarvis/s3-sync-action@master
       name: push site to s3 bucket
       with:
-        args: --follow-symlinks --delete
+        args: --follow-symlinks
       env:
         AWS_S3_BUCKET: 'eson.io'
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
