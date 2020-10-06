@@ -8,9 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: keithweaver/aws-s3-github-action@master
-          with:
-    command: cp
-    source: ./
-    destination: ''
-    aws_access_key_id: ${{ secret.AWS_ACCESS_KEY_ID }}
-    aws_secret_access_key: ${{ secret.AWS_SECRET_ACCESS_KEY }}
+        with:
+            command: cp
+            source: ./
+            destination: ''
+            aws_access_key_id: ${{ secret.AWS_ACCESS_KEY_ID }}
+            aws_secret_access_key: ${{ secret.AWS_SECRET_ACCESS_KEY }}
