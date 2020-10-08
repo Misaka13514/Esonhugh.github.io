@@ -97,7 +97,7 @@ then we nmap again
 $ nmap -A 192.168.242.131
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-08 06:31 EDT
 Nmap scan report for dc-2 (192.168.242.131)
-Host is up (0.00014s latency).
+Host is up (0.00014s latency)
 Not shown: 999 closed ports
 PORT   STATE SERVICE VERSION
 80/tcp open  http    Apache httpd 2.4.10 ((Debian))
