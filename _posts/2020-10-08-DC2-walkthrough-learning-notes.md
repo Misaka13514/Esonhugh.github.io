@@ -63,7 +63,7 @@ OH,we got problem.
 
 the nmap and our machine or our DNS server can't know who is DC-2
 
-nmap says:_http-title: Did not follow redirect to http://dc-2/
+nmap says:http-title: Did not follow redirect to http://dc-2/
 
 so we should get a little bit help for it.
 
@@ -129,6 +129,7 @@ we can got many informations about it.
 >
 >if we use this tools to scan the box we will get faster and more detail.
 >
+
 ```bash
 $ rustscan 192.168.242.131 -- -A
 .----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
@@ -213,14 +214,15 @@ Initiating NSE at 12:05
 Completed NSE at 12:05, 0.00s elapsed
 NSE: Starting runlevel 2 (of 3) scan.
 Initiating NSE at 12:05
->Completed NSE at 12:05, 0.00s elapsed
->NSE: Starting runlevel 3 (of 3) scan.
->Initiating NSE at 12:05
->Completed NSE at 12:05, 0.00s elapsed
->Read data files from: /usr/bin/../share/nmap
->Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
->Nmap done: 1 IP address (1 host up) scanned in 7.33 seconds
+Completed NSE at 12:05, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 12:05
+Completed NSE at 12:05, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 7.33 seconds
 ```
+
 >look more faster and detail.
 
 ---
