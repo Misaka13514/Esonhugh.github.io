@@ -1,8 +1,8 @@
 ---
-title: DC1 walk-through/learnning notes..
+title: DC1 walk-through/learning notes..
 date: 2020-09-20 +0800
 categories: [pentest-learning,Vulnhub]
-tags: ctf     # TAG names should always be lowercase
+tags: ctf
 ---
 
 # information_collect
@@ -153,7 +153,7 @@ Ok now we can use the dir brute force attack it.
 ```
 gobuster dir -u http://<ip-address>/ -w /usr/share/wordlists/dirb/big.txt
 ```
-this command means you go an dir attack (attack the <ip-address>
+this command means you go an dir attack to the <ip-address>
 
 with wordlists big.txt located in /usr/share/wordlists/dirb 
 
