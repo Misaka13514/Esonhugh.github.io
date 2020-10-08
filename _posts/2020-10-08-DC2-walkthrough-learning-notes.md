@@ -209,7 +209,7 @@ PORT     STATE SERVICE REASON  VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 NSE: Script Post-scanning.
-NSE: Starting runlevel 1 (of 3) scan.
+NSE: Starting runlevel 1 (of 3) scan
 Initiating NSE at 12:05
 Completed NSE at 12:05, 0.00s elapsed
 NSE: Starting runlevel 2 (of 3) scan.
@@ -217,9 +217,10 @@ Initiating NSE at 12:05
 Completed NSE at 12:05, 0.00s elapsed
 NSE: Starting runlevel 3 (of 3) scan.
 Initiating NSE at 12:05
-Completed NSE at 12:05, 0.00s elapsed
+Completed NSE at 12:05 , 0.00s elapsed
 Read data files from: /usr/bin/../share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/
+
 Nmap done: 1 IP address (1 host up) scanned in 7.33 seconds
 ```
 
