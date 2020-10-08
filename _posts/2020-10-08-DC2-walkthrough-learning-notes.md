@@ -93,6 +93,7 @@ then we nmap again
 >
 >we can both turn up our web broswer
 
+
 ```bash
 $ nmap -A 192.168.242.131
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-08 06:31 EDT
@@ -128,14 +129,14 @@ we can got many informations about it.
 >
 >
 >if we use this tools to scan the box we will get faster and more detail.
->
+
 
 ```bash
 $ rustscan 192.168.242.131 -- -A
-.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
-| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
-| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
-`-' `-'`-----'`----'  `-'  `----'  `---' `-'  `-'`-' `-'
+//.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
+//| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
+//| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
+//`-' `-'`-----'`----'  `-'  `----'  `---' `-'  `-'`-' `-'
 Faster Nmap scanning with Rust.
 ________________________________________
 : https://discord.gg/GFrQsGy           :
