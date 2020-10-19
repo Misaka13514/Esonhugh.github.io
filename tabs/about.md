@@ -3,7 +3,12 @@ title: About
 ---
 # SYSTEM_INFO(personal about)
 
+---
+
 ## OS_Name : Esonhugh_skyworship
+
+---
+
 >OS_alias:Esonhugh/skyworship/Eson
 >
 >OS_Gender:male
@@ -21,9 +26,14 @@ title: About
 >OS_language(*Programming language*):
 >
 >Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
+>
+>
 
 ---
+
 ## OS_feature(hobbies&favourite)
+
+---
 
 >create a shit codes
 
@@ -43,7 +53,23 @@ title: About
 >
 >almost very kind of meat
 
+---
+
+## OS_projects
+
+---
+
+GITHUB:
+1)[Pwnserver](https://github.com/ixiniansec/pwnserver)
+2)...
+
+
+---
+
 # OS_connect_method(links)
+
+---
+
 >GitHub:[@Esonhugh](https://github.com/Esonhugh)
 
 >Twitter:[@skyworship2](https://twitter.com/Skyworship2?s=09)
@@ -64,29 +90,27 @@ title: About
 
 ---
 
-
-
 User_name|website
 ---------|-------
 weepingdogel|[https://weepingdogel.github.io/](https://weepingdogel.github.io/)
 ajin|[https://ajin.cloud/](https://ajin.cloud/)
 欠陥電気|[https://moeneko.xyz/](https://moeneko.xyz/)
 andychen|[https://andychen.tk/](https://andychen.tk/)
+atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 
-
-```
-
-
-
-
-
-
-
-```
 ---
-### Other_info
->theme: https://github.com/cotes2020/jekyll-theme-chirpy
 
->copyright© 2017-2019 Cotes Chung
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
->MIT License
+<!--
+	comments
+	#### Other_info
+	theme: https://github.com/cotes2020/jekyll-theme-chirpy
+	copyright© 2017-2019 Cotes Chung
+	MIT License
+-->
