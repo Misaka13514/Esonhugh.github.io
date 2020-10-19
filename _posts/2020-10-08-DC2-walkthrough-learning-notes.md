@@ -1,5 +1,5 @@
 ---
-title: DC2 walk-through/learning notes..
+title: DC2 walk-through/learning notes..(unfinished)
 date: 2020-10-08 +0800
 categories: [pentest-learning,Vulnhub]
 tags: ctf 
