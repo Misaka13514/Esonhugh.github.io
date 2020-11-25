@@ -1,23 +1,23 @@
 --------------------BLOG--------------------
 green-me			https://green-m.me/feed.xml
-360ºËĞÄĞ¡×é²©¿Í			http://blogs.360.cn/
+360æ ¸å¿ƒå°ç»„åšå®¢			http://blogs.360.cn/
 WE POP SHELLS			https://shells.systems/ 
-Áã×é×ÊÁÏÎÄ¿â			http://www.0-sec.org/ 
+é›¶ç»„èµ„æ–™æ–‡åº“			http://www.0-sec.org/ 
 42team				https://42cloud.cn/ 
-ËÄ¸ç				http://scz.617.cn/ 
-crayon²©¿Í			https://crayon-xin.github.io/ 
-ÈôË®Õ«²©¿Í				https://blog.werner.wiki/  
-ÎôÄê²©¿Í				https://blog.ixinian.com/
-Raj²©¿Í				https://www.hackingarticles.in/
-ÇãĞıµÄ²©¿Í				https://payloads.online/
-ÂÌÃË¿Æ¼¼blog			http://blog.nsfocus.net/
-Ô¬¸çblog				https://yuange1975.blogspot.com/?m=1
+å››å“¥				http://scz.617.cn/ 
+crayonåšå®¢			https://crayon-xin.github.io/ 
+è‹¥æ°´æ–‹åšå®¢				https://blog.werner.wiki/  
+æ˜”å¹´åšå®¢				https://blog.ixinian.com/
+Rajåšå®¢				https://www.hackingarticles.in/
+å€¾æ—‹çš„åšå®¢				https://payloads.online/
+ç»¿ç›Ÿç§‘æŠ€blog			http://blog.nsfocus.net/
+è¢å“¥blog				https://yuange1975.blogspot.com/?m=1
 rapid7				https://blog.rapid7.com/
 K0rz3n blog			https://www.k0rz3n.com/
-Ö¸ÄÏ1				http://www.pentest-standard.org/index.php/Main_Page
-Ö¸ÄÏ2				https://bitvijays.github.io/
+æŒ‡å—1				http://www.pentest-standard.org/index.php/Main_Page
+æŒ‡å—2				https://bitvijays.github.io/
 ssooking			https://www.cnblogs.com/ssooking/
-°¢ÀïÔÆÏÈÖªÉçÇø			https://xz.aliyun.com/
+é˜¿é‡Œäº‘å…ˆçŸ¥ç¤¾åŒº			https://xz.aliyun.com/
 				https://techanarchy.net/
 				https://pentest.blog/
 				https://blog.doyensec.com/
@@ -31,33 +31,33 @@ ssooking			https://www.cnblogs.com/ssooking/
 				https://adsecurity.org/
 				https://www.kitploit.com/
 				https://attack.mitre.org/
-TCP¸´Ï°±Ê¼Ç			http://47.98.159.95/my_blog/tcp/001.html
+TCPå¤ä¹ ç¬”è®°			http://47.98.159.95/my_blog/tcp/001.html
 windows syscall			https://j00ru.vexillium.org/
 
-Éç¹¤				https://github.com/zerobyte-id/SEcraper
+ç¤¾å·¥				https://github.com/zerobyte-id/SEcraper
 				https://github.com/threat9/routersploit
 
 --------------------USEFUL--------------------
 guides :
 metasploit			https://metasploit.help.rapid7.com/docs
-¸ÃÍøÕ¾¿ÉÒÔ²éÑ¯¶ÔÓ¦Ö¤ÊéµÄip 		https://censys.io/
-ÀúÊ·dns¼ÇÂ¼ 			https://securitytrails.com/
-ËÙ²é				https://www.security-database.com/search.php
-ÖªµÀÒª¸ÉÊ²Ã´ÍüÁËÔõÃ´¸É 		https://attack.mitre.org/
-Ò»Ğ©²éÑ¯   			https://www.adminsub.net/
-¼òµ¥µÄÉøÍ¸ÆğÊÖ			https://book.hacktricks.xyz/                             
-²é¶Ë¿Ú				https://www.speedguide.net/
+è¯¥ç½‘ç«™å¯ä»¥æŸ¥è¯¢å¯¹åº”è¯ä¹¦çš„ip 		https://censys.io/
+å†å²dnsè®°å½• 			https://securitytrails.com/
+é€ŸæŸ¥				https://www.security-database.com/search.php
+çŸ¥é“è¦å¹²ä»€ä¹ˆå¿˜äº†æ€ä¹ˆå¹² 		https://attack.mitre.org/
+ä¸€äº›æŸ¥è¯¢   			https://www.adminsub.net/
+ç®€å•çš„æ¸—é€èµ·æ‰‹			https://book.hacktricks.xyz/                             
+æŸ¥ç«¯å£				https://www.speedguide.net/
 fofa				https://fofa.so/
-Ààfofa		1		https://www.shodan.io/
+ç±»fofa		1		https://www.shodan.io/
 		2		https://www.tenable.com/
 feed				https://feedburner.google.com/
 ipip				https://ipip.net
 ip				https://www.ipplus360.com
 ctf				http://ctf.ssleye.com/
 virustool			https://www.virustotal.com/
-Éç¹¤¿â				https://lans-koy.com/database/
+ç¤¾å·¥åº“				https://lans-koy.com/database/
 esplainshell			https://www.explainshell.com/
-ÍøÂç¹¥»÷Á÷Á¿			https://www.digitalattackmap.com/
+ç½‘ç»œæ”»å‡»æµé‡			https://www.digitalattackmap.com/
 exp database	1		https://www.exploit-db.com/?type=&platform=&search=&author=&tag=&port=
 		2		https://cn.0day.today/
 		3		https://vulners.com/landing
@@ -67,22 +67,22 @@ exp database	1		https://www.exploit-db.com/?type=&platform=&search=&author=&tag=
 sys call			http://syscalls.kernelgrok.com/
 
 --------------------FEEDS--------------------
-360 ºËĞÄ°²È«¼¼Êõ²©¿Í 	 	http://blogs.360.cn/rss.html
+360 æ ¸å¿ƒå®‰å…¨æŠ€æœ¯åšå®¢ 	 	http://blogs.360.cn/rss.html
 Shells.Systems  		https://shells.systems/feed/
 42cloud and 42team  		https://42cloud.cn/atom.xml
-ÈôË®Õ« 			 	https://blog.werner.wiki/feed/
-ÇãĞıµÄ²©¿Í  			https://payloads.online/feed.xml
+è‹¥æ°´æ–‹ 			 	https://blog.werner.wiki/feed/
+å€¾æ—‹çš„åšå®¢  			https://payloads.online/feed.xml
 paper - Last paper  		https://paper.seebug.org/rss/
 360 Netlab Blog 		https://blog.netlab.360.com/rss/
 Kali Linux 		 	https://www.kali.org/feed/
 Hacking Articles  		https://www.hackingarticles.in/feed/
 360 Netlab Blog		 	http://feeds.feedburner.com/360/uxyw
-ÂÌÃË¿Æ¼¼blog			http://blog.nsfocus.net/feed/
+ç»¿ç›Ÿç§‘æŠ€blog			http://blog.nsfocus.net/feed/
 rapid7				https://blog.rapid7.com/rss/
 K0rz3n bolg			https://www.k0rz3n.com/atom.xml
 kitploit			https://feeds.feedburner.com/PentestTools
 ssooking			http://feed.cnblogs.com/blog/u/300696/rss/
-ÎôÄê				https://community.ixinian.com/rss
+æ˜”å¹´				https://community.ixinian.com/rss
 				https://pentest.blog/feed/
 				https://adsecurity.org/?feed=rss2
 				https://techanarchy.net/blog.rss
