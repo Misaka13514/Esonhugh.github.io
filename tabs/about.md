@@ -9,25 +9,25 @@ title: About
 
 ---
 
->OS_alias:Esonhugh/skyworship/Eson
->
->OS_Gender:male
->
->OS_Constellations:Scorpius 
->
->OS_environment(*Loaction*):Shanghai/Hangzhou
->
->OS_shell(*Job*):**student**
->
->OS_version(*Ages*):XX[data_error]
->
->OS_package(*Personality*):**INTP-T**
->
->OS_language(*Programming language*):
->
->Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
->
->
+OS_alias:Esonhugh/skyworship/Eson
+
+OS_Gender:male
+
+OS_Constellations:Scorpius 
+
+OS_environment(*Loaction*):Shanghai/Hangzhou
+
+OS_shell(*Job*):**student**
+
+OS_version(*Ages*):XX[data_error]
+
+OS_package(*Personality*):**INTP-T**
+
+OS_language(*Programming language*):
+
+Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
+
+
 
 ---
 
@@ -35,23 +35,23 @@ title: About
 
 ---
 
->create a shit codes
+create a shit codes
 
->play box as HTB/(but now is more vulnhub)
+play box as HTB/(but now is more vulnhub)
 
->PATH(subjects):
->
->Math:
->Physics:
->IT:
->Psychology:
->Philosophy:
+PATH(subjects):
 
->singer_REOL
+Math:
+Physics:
+IT:
+Psychology:
+Philosophy:
 
->food_beef
->
->almost very kind of meat
+singer_REOL
+
+food_beef
+
+almost very kind of meat
 
 ---
 
@@ -60,7 +60,9 @@ title: About
 ---
 
 GITHUB:
+
 1)[Pwnserver](https://github.com/ixiniansec/pwnserver)
+
 2)...
 
 
@@ -78,7 +80,8 @@ Telegram:[@Esonhugh_Shit $Code Producer](https://t.me/EsonHugh_Skywalker)
 
 Telegram_channel:[@Esonhugh_LifeNagging](https://t.me/Esonhugh_LifeNagging)
 
-Mail_address:[Esonhugh's Gmail]<esonhughoutside@gmail.com>
+Mail_address:<esonhughoutside@gmail.com>
+
 
 ---
 
@@ -96,12 +99,12 @@ atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 
 ---
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br
+<br
+<br
+<br
+<br
+<br
 
 <!--
 	comments
@@ -109,4 +112,4 @@ atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 	theme: https://github.com/cotes2020/jekyll-theme-chirpy
 	copyright© 2017-2019 Cotes Chung
 	MIT License
--->
+-!>
