@@ -78,7 +78,7 @@ Telegram:[@Esonhugh_Shit $Code Producer](https://t.me/EsonHugh_Skywalker)
 
 Telegram_channel:[@Esonhugh_LifeNagging](https://t.me/Esonhugh_LifeNagging)
 
-Mail|address:Gmail|esonhughoutside@gmail.com
+Mail_address:Gmail|esonhughoutside@gmail.com
 
 ---
 
