@@ -99,12 +99,12 @@ atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 
 ---
 
-<br
-<br
-<br
-<br
-<br
-<br
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!--
 	comments
@@ -112,4 +112,4 @@ atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 	theme: https://github.com/cotes2020/jekyll-theme-chirpy
 	copyright© 2017-2019 Cotes Chung
 	MIT License
--!>
+-->
