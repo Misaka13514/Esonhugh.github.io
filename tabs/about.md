@@ -8,7 +8,9 @@ title: About
 -->
 <script id="PlayerHelper" src="/tabs/musicPlayer.js" onload="Player()"></script>
 
-<iframe id="musicPlayer" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src></iframe>
+<iframe id="musicPlayer" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/playertype=2&id=1466303986&auto=1&height=66">
+</iframe>
+
 	
 
 
