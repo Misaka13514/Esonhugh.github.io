@@ -4,8 +4,40 @@ title: About
 
 <!--
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1466303986&auto=1&height=66"></iframe>
--->
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=5358234121&auto=1&height=90"></iframe>
+-->
+<script>
+	function MusicRandomPlay(address){
+		document.getElementById("musicPlayer").src = address;
+	}
+	function RandomInt(min, max) {
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.floor(Math.random() * (max - min) + min); 
+		//The maximum is exclusive and the minimum is inclusive
+	}
+	switch(RandomInt(1,4)){
+	case 1:
+		MusicRandomPlay("//music.163.com/outchain/player?type=2&id=1466303986&auto=1&height=66");
+	//the sixth sense
+		break;
+	case 2:
+		MusicRandomPlay("//music.163.com/outchain/player?type=2&id=28941709&auto=1&height=66");
+	//ヒビカセ
+		break;
+	case 3:
+		MusicRandomPlay("//music.163.com/outchain/player?type=2&id=31356410&auto=1&height=66");
+	//Mr.taxi
+		break;
+	default:
+		MusicRandomPlay("//music.163.com/outchain/player?type=2&id=436016471&auto=1&height=66");
+	//宵々古今
+		break;
+	}
+</script>
+<iframe id="musicPlayer" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src></iframe>
+
+
 
 # SYSTEM_INFO(personal about)
 
