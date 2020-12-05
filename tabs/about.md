@@ -35,9 +35,7 @@ OS_version(*Ages*):XX[data_error]
 
 OS_package(*Personality*):**INTP-T**
 
-OS_language(*Programming language*):
-
-Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
+OS_language(*Programming language*): Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
 
 
 
