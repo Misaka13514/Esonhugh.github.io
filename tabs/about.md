@@ -35,7 +35,7 @@ OS_version(*Ages*):XX[data_error]
 
 OS_package(*Personality*):**INTP-T**
 
-OS_language(*Programming language*): Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ ##all learning now
+OS_language(*Programming language*): Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bash~~ :~~vim-script~~  ## all of them is learning now
 
 
 
@@ -44,6 +44,10 @@ OS_language(*Programming language*): Python: C/C++: ~~SQL~~ :~~Markdown~~ :~~bas
 ## OS_feature(hobbies&favourite)
 
 ---
+
+**VIM  is the best!**
+*Neovim is always used // get started with Neovim in 2020-12-09*
+
 
 create a shit codes
 
@@ -62,6 +66,18 @@ singer_REOL
 food_beef
 
 almost very kind of meat
+
+---
+
+## OS_issues(future plans)
+
+1.familiar linux more especially the CLI
+
+2.learning for Kali(using tools and having ability to do some coooool things)
+
+3.learn more and try harder (ths last words come from the OSCP course)
+
+4.......(to be continue.. ->)
 
 ---
 
