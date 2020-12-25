@@ -121,7 +121,7 @@ User_name|website
 ---------|-------
 weepingdogel|[https://weepingdogel.github.io/](https://weepingdogel.github.io/)
 ajin|[https://ajin.cloud/](https://ajin.cloud/)
-欠陥電気|[https://moeneko.xyz/](https://moeneko.xyz/)
+欠陥電気|[https://blog.atri.tk/](https://blog.atri.tk/)
 andychen|[https://andychen.tk/](https://andychen.tk/)
 atsud0(小雪雪)|[https://atsud0.me/](https://atsud0.me/)
 LeiBlog|[https://leiblog.wang/](https://leiblog.wang/)
